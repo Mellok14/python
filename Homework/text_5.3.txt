@@ -1,0 +1,6 @@
+Ivanov 21000
+Petrov 18000
+Romanov 22000
+Fedorov 16000
+Sidorov 13000
+Levashov 23000
