@@ -14,7 +14,7 @@ print(f'Список репозиториев пользователя {name}:')
 for repositories in data:
     print(repositories['html_url'])
 
-#Если я правильно понял что в json файл надо сохранить весь вывад то:
+#Если я правильно понял что в json файл надо сохранить весь вывод то:
 
 with open("1_result.json", "w", encoding="utf-8") as file:
     json.dump(data, file)
