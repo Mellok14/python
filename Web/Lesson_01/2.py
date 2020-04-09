@@ -16,6 +16,7 @@ with open("2_result.json", "w", encoding="utf-8") as file:
 
 #А вот Яндекс почему то выдавал постоянно ошибку:
 #{"statusCode":403,"error":"Forbidden","message":"Invalid key"}
+#Upd. Спустя время проверил код для Яндекса и тоже заработал в браузере, видимо Яндекс долго активировал данный мне Api key
 
 main_link = 'https://search-maps.yandex.ru/v1/'
 header = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36'}
