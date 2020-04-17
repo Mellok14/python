@@ -1,4 +1,5 @@
 import numpy as np
+import json
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup as bs
@@ -92,20 +93,20 @@ while next_page_1 != None:
 def price_1(list):
     for i in list:
         if i['price'][0:2] == 'от':
-            i['min_price'] = i['price'].split('\xa0')[1] + i['price'].split('\xa0')[2]
+            i['min_price'] = int(i['price'].split('\xa0')[1] + i['price'].split('\xa0')[2])
             i['max_price'] = None
             i['currency'] = i['price'].split('\xa0')[3]
         elif i['price'][0:2] == 'до':
             i['min_price'] = None
-            i['max_price'] = i['price'].split('\xa0')[1] + i['price'].split('\xa0')[2]
+            i['max_price'] = int(i['price'].split('\xa0')[1] + i['price'].split('\xa0')[2])
             i['currency'] = i['price'].split('\xa0')[3]
         elif i['price'] == 'По договорённости':
             i['min_price'] = None
             i['max_price'] = None
             i['currency'] = None
         else:
-            i['min_price'] = i['price'].split('—')[0].replace('\xa0', '')
-            i['max_price'] = i['price'].split('—')[1].split('\xa0')[1] + i['price'].split('—')[1].split('\xa0')[2]
+            i['min_price'] = int(i['price'].split('—')[0].replace('\xa0', ''))
+            i['max_price'] = int(i['price'].split('—')[1].split('\xa0')[1] + i['price'].split('—')[1].split('\xa0')[2])
             i['currency'] = i['price'].split('\xa0')[-1]
         i.pop('price', None)
 
@@ -114,4 +115,7 @@ price_1(vacancies_1)
 df = pd.DataFrame(vacancies)
 df_1 = pd.DataFrame(vacancies_1)
 df_total = pd.concat([df, df_1], axis = 0)
-print(df_total)
+for i in vacancies_1:
+    vacancies.append(i)
+with open("1_result.json", "w", encoding="utf-8") as file:
+    json.dump(vacancies, file)
