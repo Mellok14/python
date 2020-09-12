@@ -1,4 +1,4 @@
-'''
+```
 import os
 info = {'$NAME1':'data', '$NAME2':'table', .................}
 source_dir = '/path/source_folder'
@@ -14,4 +14,4 @@ for f in files:
     out_file.write(in_file_string)
     out_file.close
     in_file.close
-'''
+```
