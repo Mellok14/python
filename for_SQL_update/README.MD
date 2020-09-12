@@ -1,7 +1,8 @@
-'''
-import os
 
-info = {'$NAME1':'data', '$NAME2':'table', .................}
+ import os
+
+ info = {'$NAME1':'data', '$NAME2':'table', .................}
+ 
 source_dir = '/path/source_folder'
 dest_dir = '/path/dest_folder'
 files = os.listdir(source_dir)
