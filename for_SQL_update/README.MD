@@ -1,8 +1,5 @@
-
- import os
-
- info = {'$NAME1':'data', '$NAME2':'table', .................}
- 
+'''import os
+info = {'$NAME1':'data', '$NAME2':'table', .................}
 source_dir = '/path/source_folder'
 dest_dir = '/path/dest_folder'
 files = os.listdir(source_dir)
@@ -16,4 +13,4 @@ for f in files:
     out_file.write(in_file_string)
     out_file.close
     in_file.close
-    '''
+'''
